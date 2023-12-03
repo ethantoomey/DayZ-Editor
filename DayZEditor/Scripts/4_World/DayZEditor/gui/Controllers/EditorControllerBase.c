@@ -7,7 +7,7 @@ class EditorControllerBase: ViewController
 		m_Editor = GetEditor();
 	}
 	
-	override void OnWidgetScriptInit(Widget w)
+	override void OnWidgetScriptInit(notnull Widget w)
 	{
 		m_Editor = GetEditor();
 		super.OnWidgetScriptInit(w);

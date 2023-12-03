@@ -22,7 +22,7 @@ class EditorObjectPropertiesDialog: EditorDialogBase
 		delete m_EditorMultiObjectCommandController;
 	}
 	
-	void PropertyChanged(string property_name)
+	override void PropertyChanged(string property_name)
 	{
 		switch (property_name) {
 			case "ExecuteCode": {

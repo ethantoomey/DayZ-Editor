@@ -110,7 +110,7 @@ class EditorHudController: EditorControllerBase
 #endif
 	}
 	
-	override void OnWidgetScriptInit(Widget w)
+	override void OnWidgetScriptInit(notnull Widget w)
 	{
 		super.OnWidgetScriptInit(w);
 		

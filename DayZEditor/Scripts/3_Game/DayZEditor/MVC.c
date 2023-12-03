@@ -1,15 +1,4 @@
-modded class MVC
-{
-	override void RegisterConversionTemplates(out TypeConversionHashMap type_conversions)
-	{
-		super.RegisterConversionTemplates(type_conversions);
-		type_conversions.Insert(EditorBrushData, TypeConversionBrush);
-		type_conversions.Insert(EditorBrushObject, TypeConversionBrushObject);
-		type_conversions.Insert(DropdownListPrefabItemBase, DropdownListPrefabItemConverter);
-		type_conversions.Insert(EditorFile, TypeConversionEditorFile);
-	}
-}
-
+[RegisterTypeConversion(TypeConversionBrush, EditorBrushData)]
 class TypeConversionBrush: TypeConversionTemplate<EditorBrushData>
 {	
 	override void SetString(string value) 
@@ -23,6 +12,7 @@ class TypeConversionBrush: TypeConversionTemplate<EditorBrushData>
 	}
 }
 
+[RegisterTypeConversion(TypeConversionBrushObject, EditorBrushObject)]
 class TypeConversionBrushObject: TypeConversionTemplate<EditorBrushObject>
 {
 	override void SetString(string value) 
@@ -41,6 +31,7 @@ class TypeConversionBrushObject: TypeConversionTemplate<EditorBrushObject>
 	}
 }
 
+[RegisterTypeConversion(TypeConversionEditorFile, EditorFile)]
 class TypeConversionEditorFile: TypeConversionTemplate<EditorFile>
 {
 	override void SetString(string value) 
@@ -60,6 +51,7 @@ class TypeConversionEditorFile: TypeConversionTemplate<EditorFile>
 	}
 }
 
+[RegisterTypeConversion(DropdownListPrefabItemConverter, DropdownListPrefabItemBase)]
 class DropdownListPrefabItemConverter: TypeConversionTemplate<DropdownListPrefabItemBase>
 {
 	override string GetString() 
