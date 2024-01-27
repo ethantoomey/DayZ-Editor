@@ -270,7 +270,7 @@ class Editor: EditorServer
 		}
 		
 		if (input.LocalPress("EditorToggleCursor")) {
-			bool cursor_state = !GetGame().GetUIManager().IsCursorVisible();
+			bool cursor_state = GetGame().GetUIManager().IsCursorVisible();
 			GetGame().GetUIManager().ShowCursor(cursor_state);
 			GetGame().GetUIManager().ShowUICursor(cursor_state);
 			m_Hud.ClearCursor();
